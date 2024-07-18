@@ -1,0 +1,6 @@
+@IocLifeCyclesExample_HostAddress = http://localhost:5069
+
+GET {{IocLifeCyclesExample_HostAddress}}/ioclifecyclesexample/
+Accept: application/json
+
+###
