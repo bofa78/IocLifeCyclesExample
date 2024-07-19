@@ -2,6 +2,6 @@
 {
     public class IocLifeCyclesExampleResponseModel
     {
-        public Dictionary<string, Guid> Services { get; set; }
+        public Dictionary<string, Guid> Services { get; set; } = [];
     }
 }
