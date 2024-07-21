@@ -30,7 +30,7 @@ steps:
     templateLocation: 'URL of the file'
     csmFileLink: 'https://raw.githubusercontent.com/bofa78/IocLifeCyclesExample/feature/Add-arm-deployment/ARM/template.json'
     csmParametersFileLink: 'https://raw.githubusercontent.com/bofa78/IocLifeCyclesExample/feature/Add-arm-deployment/ARM/parameters.json'
-    overrideParameters: -resourceGroupName $(resourceGroupName) -name $(webAppName) -location $(location) -hostingPlanName $(webAppName)plan -alwaysOn $(alwaysOn)plan -ftpsState $(ftpsState) -sku $(sku) -skuCode $(skuCode) -numberOfWorkers $(numberOfWorkers) -workerSize $(workerSize) -workerSizeId $(workerSizeId) -linuxFxVersion $(linuxFxVersion)
+    overrideParameters: -resourceGroupName $(resourceGroupName) -name $(webAppName) -location $(location) -hostingPlanName $(webAppName)plan -alwaysOn $(alwaysOn) -ftpsState $(ftpsState) -sku $(sku) -skuCode $(skuCode) -numberOfWorkers $(numberOfWorkers) -workerSize $(workerSize) -workerSizeId $(workerSizeId) -linuxFxVersion $(linuxFxVersion)
     deploymentMode: 'Validation'
 
 - task: AzureResourceManagerTemplateDeployment@3
@@ -44,6 +44,6 @@ steps:
     location: '$(location)'
     templateLocation: 'URL of the file'
     csmFileLink: 'https://raw.githubusercontent.com/bofa78/IocLifeCyclesExample/feature/Add-arm-deployment/ARM/template.json'
-    overrideParameters: -resourceGroupName $(resourceGroupName) -name $(webAppName) -location $(location) -hostingPlanName $(webAppName)plan -alwaysOn $(alwaysOn)plan -ftpsState $(ftpsState) -sku $(sku) -skuCode $(skuCode) -numberOfWorkers $(numberOfWorkers) -workerSize $(workerSize) -workerSizeId $(workerSizeId) -linuxFxVersion $(linuxFxVersion)
+    overrideParameters: -resourceGroupName $(resourceGroupName) -name $(webAppName) -location $(location) -hostingPlanName $(webAppName)plan -alwaysOn $(alwaysOn) -ftpsState $(ftpsState) -sku $(sku) -skuCode $(skuCode) -numberOfWorkers $(numberOfWorkers) -workerSize $(workerSize) -workerSizeId $(workerSizeId) -linuxFxVersion $(linuxFxVersion)
     deploymentMode: 'Incremental'
 
