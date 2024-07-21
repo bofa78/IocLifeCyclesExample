@@ -10,6 +10,8 @@ namespace IocLifeCyclesExample.Extensions
             services.AddKeyedScoped<ILifeCycleService, ScopedService>(Constants.ServiceNames.Scoped);
             services.AddKeyedSingleton<ILifeCycleService, SigletoneService>(Constants.ServiceNames.Singleton);
             services.AddKeyedTransient<ILifeCycleService, TransientService>(Constants.ServiceNames.Transient);
+
+            services.AddTransient<IIocLifeCyclesExampleService, IocLifeCyclesExampleService>();
         }
     }
 }

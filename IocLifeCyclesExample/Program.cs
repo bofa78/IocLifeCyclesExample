@@ -7,6 +7,13 @@ namespace IocLifeCyclesExample
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Host.UseDefaultServiceProvider(o =>
+            {
+                o.ValidateOnBuild = true;
+                o.ValidateScopes = true;
+            });
+
             builder.Logging.ClearProviders();
             builder.Logging.AddConsole();
 
@@ -33,7 +40,6 @@ namespace IocLifeCyclesExample
             });
 
             // Configure the HTTP request pipeline.
-
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
