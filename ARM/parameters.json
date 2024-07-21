@@ -1,0 +1,45 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "subscriptionId": {
+      "value": "e8d6b0c1-d8d7-47e0-929b-ae78222bb171"
+    },
+    "resourceGroupName": {
+      "value": "IocLifeCyclesExample"
+    },
+    "name": {
+      "value": "IocLifeCyclesExample"
+    },
+    "location": {
+      "value": "West Europe"
+    },
+    "hostingPlanName": {
+      "value": "IocLifeCyclesExamplePlan"
+    },
+    "alwaysOn": {
+      "value": false
+    },
+    "ftpsState": {
+      "value": "FtpsOnly"
+    },
+    "sku": {
+      "value": "Free"
+    },
+    "skuCode": {
+      "value": "F1"
+    },
+    "numberOfWorkers": {
+      "value": "1"
+    },
+    "workerSize": {
+      "value": "0"
+    },
+    "workerSizeId": {
+      "value": "0"
+    },
+    "linuxFxVersion": {
+      "value": "DOTNETCORE|8.0"
+    }
+  }
+}

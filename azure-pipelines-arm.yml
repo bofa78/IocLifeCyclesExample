@@ -1,0 +1,72 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  resourceGroupName: 'IocLifeCyclesExample'
+  webAppName: 'IocLifeCyclesExample'
+  location: 'West Europe'
+  alwaysOn: false
+  ftpsState: 'FtpsOnly'
+  sku: 'Free'
+  skuCode: 'F1'
+  numberOfWorkers: 1
+  workerSize: 0
+  workerSizeId: 0
+  linuxFxVersion: "DOTNETCORE|8.0"
+
+steps:
+- task: AzureResourceManagerTemplateDeployment@3
+  displayName: ARM Validation
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'bofa78A'
+    subscriptionId: 'e8d6b0c1-d8d7-47e0-929b-ae78222bb171'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: '$(resourceGroupName)'
+    location: '$(location)'
+    templateLocation: 'URL of the file'
+    csmFileLink: 'paprika'
+    overrideParameters: |
+      resourceGroupName: '$(resourceGroupName)'
+      name: '$(webAppName)'
+      location: '$(location)'
+      hostingPlanName: '$(webAppName)plan'
+      alwaysOn: '$(alwaysOn)plan'
+      ftpsState: '$(ftpsState)'
+      sku:  '$(sku)'
+      skuCode:  '$(skuCode)'
+      numberOfWorkers:  '$(numberOfWorkers)'
+      workerSize:  '$(workerSize)'
+      workerSizeId:  '$(workerSizeId)'
+      linuxFxVersion:  '$(linuxFxVersion)'
+    deploymentMode: 'Incremental'
+
+- task: AzureResourceManagerTemplateDeployment@3
+  displayName: ARM Deployment
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'bofa78A'
+    subscriptionId: 'e8d6b0c1-d8d7-47e0-929b-ae78222bb171'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: '$(resourceGroupName)'
+    location: '$(location)'
+    templateLocation: 'URL of the file'
+    csmFileLink: 'paprika'
+    overrideParameters: |
+      resourceGroupName: '$(resourceGroupName)'
+      name: '$(webAppName)'
+      location: '$(location)'
+      hostingPlanName: '$(webAppName)plan'
+      alwaysOn: '$(alwaysOn)plan'
+      ftpsState: '$(ftpsState)'
+      sku:  '$(sku)'
+      skuCode:  '$(skuCode)'
+      numberOfWorkers:  '$(numberOfWorkers)'
+      workerSize:  '$(workerSize)'
+      workerSizeId:  '$(workerSizeId)'
+      linuxFxVersion:  '$(linuxFxVersion)'
+    deploymentMode: 'Incremental'
+
