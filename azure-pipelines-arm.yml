@@ -28,7 +28,7 @@ steps:
     resourceGroupName: '$(resourceGroupName)'
     location: '$(location)'
     templateLocation: 'URL of the file'
-    csmFileLink: 'paprika'
+    csmFileLink: 'https://raw.githubusercontent.com/bofa78/IocLifeCyclesExample/feature/Add-arm-deployment/ARM/template.json'
     overrideParameters: |
       resourceGroupName: '$(resourceGroupName)'
       name: '$(webAppName)'
@@ -54,7 +54,7 @@ steps:
     resourceGroupName: '$(resourceGroupName)'
     location: '$(location)'
     templateLocation: 'URL of the file'
-    csmFileLink: 'paprika'
+    csmFileLink: 'https://raw.githubusercontent.com/bofa78/IocLifeCyclesExample/feature/Add-arm-deployment/ARM/template.json'
     overrideParameters: |
       resourceGroupName: '$(resourceGroupName)'
       name: '$(webAppName)'
