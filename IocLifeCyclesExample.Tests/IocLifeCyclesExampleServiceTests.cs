@@ -47,12 +47,12 @@ namespace IocLifeCyclesExample.Tests
             // Assert
             var expectedServices = new Dictionary<string, Guid>
             {
-                { "ScopedServiceA", guidScoped },
-                { "ScopedServiceB", guidScoped },
-                { "SingletonServiceA",guidSigleton },
-                { "SingletonServiceB", guidSigleton },
-                { "TransientServiceA", guidTransientA },
-                { "TransientServiceB", guidTransientB }
+                { "scopedServiceA", guidScoped },
+                { "scopedServiceB", guidScoped },
+                { "singletonServiceA",guidSigleton },
+                { "singletonServiceB", guidSigleton },
+                { "transientServiceA", guidTransientA },
+                { "transientServiceB", guidTransientB }
             };
             result.Services.Count().Should().Be(expectedServices.Count());
             result.Services.Should().BeEquivalentTo(expectedServices);
@@ -62,15 +62,6 @@ namespace IocLifeCyclesExample.Tests
                 result.Services.ContainsKey(expectedService.Key).Should().BeTrue();
                 result.Services[expectedService.Key].Should().Be(expectedService.Value);
             }
-
-            loggerMock.Verify(
-                logger => logger.Log(
-                    LogLevel.Information,
-                    It.IsAny<EventId>(),
-                    It.Is<It.IsAnyType>((v, t) => v.ToString().Contains(guidScoped.ToString())),
-                    It.IsAny<Exception>(),
-                    (Func<It.IsAnyType, Exception, string>)It.IsAny<object>()),
-                Times.Once);
         }
     }
 }

@@ -18,11 +18,11 @@ namespace IocLifeCyclesExample.Services
             result.Services = new()
             {
                 { nameof(scopedServiceA), scopedServiceA.GetGuid() },
-                { "ScopedServiceB", scopedServiceB.GetGuid() },
-                { "SingletonServiceA", singletonServiceA.GetGuid() },
-                { "SingletonServiceB", singletonServiceB.GetGuid() },
-                { "TransientServiceA", transientServiceA.GetGuid() },
-                { "TransientServiceB", transientServiceB.GetGuid() }
+                { nameof(scopedServiceB), scopedServiceB.GetGuid() },
+                { nameof(singletonServiceA), singletonServiceA.GetGuid() },
+                { nameof(singletonServiceB), singletonServiceB.GetGuid() },
+                { nameof(transientServiceA), transientServiceA.GetGuid() },
+                { nameof(transientServiceB), transientServiceB.GetGuid() }
             };
 
             logger.LogInformation(message: System.Text.Json.JsonSerializer.Serialize(result));
