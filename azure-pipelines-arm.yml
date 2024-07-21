@@ -30,18 +30,18 @@ steps:
     templateLocation: 'URL of the file'
     csmFileLink: 'https://raw.githubusercontent.com/bofa78/IocLifeCyclesExample/feature/Add-arm-deployment/ARM/template.json'
     overrideParameters: |
-      -resourceGroupName '$(resourceGroupName)'
-      -name '$(webAppName)'
-      -location '$(location)'
-      -hostingPlanName '$(webAppName)plan'
-      -alwaysOn '$(alwaysOn)plan'
-      -ftpsState '$(ftpsState)'
-      -sku '$(sku)'
-      -skuCode '$(skuCode)'
-      -numberOfWorkers '$(numberOfWorkers)'
-      -workerSize '$(workerSize)'
-      -workerSizeId '$(workerSizeId)'
-      -linuxFxVersion '$(linuxFxVersion)'
+      -resourceGroupName "$(resourceGroupName)"
+      -name "$(webAppName)"
+      -location "$(location)"
+      -hostingPlanName "$(webAppName)plan"
+      -alwaysOn "$(alwaysOn)plan"
+      -ftpsState "$(ftpsState)"
+      -sku "$(sku)"
+      -skuCode "$(skuCode)"
+      -numberOfWorkers $(numberOfWorkers)
+      -workerSize $(workerSize)
+      -workerSizeId $(workerSizeId)
+      -linuxFxVersion "$(linuxFxVersion)"
     deploymentMode: 'Incremental'
 
 - task: AzureResourceManagerTemplateDeployment@3
@@ -56,17 +56,17 @@ steps:
     templateLocation: 'URL of the file'
     csmFileLink: 'https://raw.githubusercontent.com/bofa78/IocLifeCyclesExample/feature/Add-arm-deployment/ARM/template.json'
     overrideParameters: |
-      -resourceGroupName '$(resourceGroupName)'
-      -name '$(webAppName)'
-      -location '$(location)'
-      -hostingPlanName '$(webAppName)plan'
-      -alwaysOn '$(alwaysOn)plan'
-      -ftpsState '$(ftpsState)'
-      -sku '$(sku)'
-      -skuCode '$(skuCode)'
-      -numberOfWorkers '$(numberOfWorkers)'
-      -workerSize '$(workerSize)'
-      -workerSizeId '$(workerSizeId)'
-      -linuxFxVersion '$(linuxFxVersion)'
+      -resourceGroupName "$(resourceGroupName)"
+      -name "$(webAppName)"
+      -location "$(location)"
+      -hostingPlanName "$(webAppName)plan"
+      -alwaysOn "$(alwaysOn)plan"
+      -ftpsState "$(ftpsState)"
+      -sku "$(sku)"
+      -skuCode "$(skuCode)"
+      -numberOfWorkers $(numberOfWorkers)
+      -workerSize $(workerSize)
+      -workerSizeId $(workerSizeId)
+      -linuxFxVersion "$(linuxFxVersion)"
     deploymentMode: 'Incremental'
 
